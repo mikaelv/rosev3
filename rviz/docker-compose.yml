@@ -1,0 +1,25 @@
+version: '2'
+services:
+  rviz:
+    build: .
+    image: rosev3-rviz
+    container_name: rviz
+    hostname: rviz
+    devices:
+      - /dev/net/tun
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN       
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix"
+    environment:
+      - "DISPLAY=:0"
+      - "QT_X11_NO_MITSHM=1"
+      - "ROS_MASTER_URI=http://master:11311"
+    command: rosrun rviz rviz
+
+networks:
+  default:
+    external:
+      name: master_rosnet
+
