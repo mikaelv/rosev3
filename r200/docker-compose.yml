@@ -1,0 +1,21 @@
+version: '2'
+services:
+  r200:
+    build: .
+    image: rosev3-r200
+    container_name: r200
+    hostname: r200
+    environment:
+      - "ROS_MASTER_URI=http://master:11311"
+    devices:
+      - /dev/video0
+      - /dev/video1
+      - /dev/video2
+    command: bash -c "sudo chmod 666 /dev/video? && roslaunch realsense_camera r200_nodelet_rgbd.launch"
+#    command: sleep 1000000
+
+networks:
+  default:
+    external:
+      name: master_rosnet
+

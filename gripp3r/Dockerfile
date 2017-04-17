@@ -2,8 +2,8 @@ FROM rosev3-master
 
 RUN sudo apt-get -y update
 
-RUN sudo apt-get install -y ros-indigo-controller-manager \
-ros-indigo-teleop-twist-keyboard
+RUN sudo apt-get install -y ros-kinetic-controller-manager \
+ros-kinetic-teleop-twist-keyboard
 
 #RUN mkdir -p ~/catkin-ws/src
 #RUN git clone https://github.com/pirobot/rbx1.git ~/catkin-ws/src/rbx1

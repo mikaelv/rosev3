@@ -1,9 +1,8 @@
-FROM ros:indigo-ros-core
+FROM ros:kinetic-ros-core
 
 RUN apt-get -y update
 
-#RUN apt-get -y install ros-indigo-image-pipeline
-#RUN apt-get -y install ros-indigo-ros-tutorials
+RUN apt-get -y install sudo
 
 ENV uid 1000 
 ENV gid 1000 

@@ -4,6 +4,7 @@ services:
     build: .
     image: rosev3-master
     container_name: master
+    hostname: master
     networks:
       rosnet:
         ipv4_address: 192.168.0.100
